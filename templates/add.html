@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление в Wishlist
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+  <form method="post" class="shadow p-2 text-center">
+    <div class="container-fluid">
+      <h1>Добавление в Wishlist</h1>
+      <div class="form-group">
+        <input type="text" name="name" id="name" class="form-conrol" placeholder="Введите название">
+      </div>
+      <div class="form-group">
+        <input type="text" name="price" id="price" class="form-conrol" placeholder="Введите цену">
+      </div>
+      <div class="form-group">
+        <input type="text" name="link" id="link" class="form-conrol" placeholder="Введите ссылку">
+      </div>
+      <div class="form-group">
+        <input type="text" name="note" id="note" class="form-conrol" placeholder="Введите примечание">
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Добавить">
+        <a href="/" class="btn btn-secondary">Назад</a>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Wishlist
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col mt-1 mx-auto">
+			<a href="/add" class="btn btn-success float-right mb-1"><i class="fa fa-plus"></i></a>
+			<table class="table shadow">
+				<thead class="thead-dark">
+					<tr>
+						<th>№</th>
+						<th>Название</th>
+						<th>Цена</th>
+						<th>Ссылка</th>
+						<th>Примечание</th>
+						<th>Действия</th>
+					</tr>
+					{% for el in products %}
+					<tr>
+						<td>{{ el.id }} </td>
+						<td>{{ el.name }} </td>
+						<td>{{ el.price }} </td>
+
+
+						<td>
+							<a href=" {{ el.link }} " target="_blank"><i class="fas fa-external-link-alt"></i></a>
+						</td>
+						<td>{{ el.note }} </td>
+						<td>
+							<a href="/product/{{ el.id }}/update" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+							<a href="/product/{{ el.id }}/delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+						</td>
+					</tr>
+					{% endfor %}
+				</thead>
+			</table>
+		</div>
+
+
+	</div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
