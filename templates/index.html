@@ -21,7 +21,7 @@ Wishlist
 					</tr>
 					{% for el in products %}
 					<tr>
-						<td>{{ el.id }} </td>
+						<td>{{ loop.index }} </td>
 						<td>{{ el.name }} </td>
 						<td>{{ el.price }} </td>
 
